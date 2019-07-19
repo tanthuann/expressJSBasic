@@ -1,0 +1,11 @@
+extends ../layouts/layout.pug
+
+block content
+	h1 User View
+	ul
+		span Name:&nbsp
+		span(class="")= user.name
+		br
+		span Id:&nbsp
+		span(class="text-warning")= user.id
+		

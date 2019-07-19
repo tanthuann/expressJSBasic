@@ -1,13 +1,24 @@
-h1 Users
-form(action="/users/search", method="GET")
-	input(class="input", type="text", name="q", value="")
-	button Search
-a(href="/users/create") Create
-ul
-	each user in users
-		li= user.name
+extends ../layouts/layout.pug
 
-
-
-
-
+block content
+	div(class="container text-center")
+		form(action="/users/search", method="GET")
+			div(class="d-flex justify-content-center align-items-center")
+				a(class="my-2 btn btn-success mr-auto",href="/users/create") Create
+				input(class="input", type="text", name="q", value="")
+				button(class="btn btn-warning") Search
+	table(class="container text-center table py-2")
+		tbody
+			thead.thead-dark
+				tr 
+					th(scope="col") Name
+					th(scope="col") Phone			
+					th(scope="col") Id				
+					th(scope="col") View					
+			each user in users
+				tr
+					td(scope="row",class="font-weight-bold")= user.name
+					td(scope="row",class="font-weight-bold")= user.phone
+					td(scope="row",class="font-weight-bold text-danger")= user.id
+					td(scope="row") 
+						a(href='/users/'+user.id) View
