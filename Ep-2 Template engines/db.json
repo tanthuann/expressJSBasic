@@ -1,6 +1,8 @@
 {
   "users": [
     {
+      "email": "123@123",
+      "password": "12345",
       "name": "Trương Tấn Thuận",
       "phone": "0931844399",
       "id": "oI5oSN3p8"
@@ -29,6 +31,11 @@
       "name": "Nguyễn Anh Anh",
       "phone": 5468896546,
       "id": "XNMXLNHPN"
+    },
+    {
+      "name": "Trương Thị Thuỷ",
+      "phone": 48695663558,
+      "id": "Ht2GAM5GU"
     }
   ]
 }

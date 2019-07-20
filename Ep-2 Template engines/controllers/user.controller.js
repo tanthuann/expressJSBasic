@@ -1,8 +1,6 @@
 var db = require('../db.js');
 var shortid = require('shortid');
 
-
-
 var users = db.get('users').value();
 
 module.exports.index = function (request, response) {
@@ -36,37 +34,8 @@ module.exports.userID = (req, res) => {
 };
 
 module.exports.postCreate = (req,res) => {
-	newID = shortid.generate();
-	console.log(req.body);
-	newUser = req.body;
-	newUser.id = newID;
-	var errors=[];
-	newUser.name = newUser.name.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
-	if (!newUser.name){
-		errors.push('Name is not required')
-	}
-	newUser.phone = parseInt(newUser.phone);
-
-not:	if(newUser.phone === '' || !Number.isInteger(newUser.phone)){
-			if (newUser.phone === ''){
-				errors.push('Phone number is not required');
-				newUser.phone='';
-				break not;
-			}
-			
-			if(!Number.isInteger(newUser.phone)){
-				errors.push('Phone number must be an integer')
-				newUser.phone='';
-			}
-		}
-	console.log(errors);
-	if(errors.length) {
-		res.render('users/create', {
-			errors: errors,
-			value: req.body
-		});
-		return;
-	}
+	req.body.id = shortid.generate();
+	
 	db.get('users').push(newUser).write();
 	res.redirect('/users');
 };

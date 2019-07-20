@@ -1,13 +1,19 @@
 var express = require('express');
+var cookieParser = require('cookie-parser');
+
 
 var userRouter = require('./router/users.router')
+var authRouter = require('./router/auth.router')
 
 var app = express();
 var port = 3000;
 
-app.use(express.json()) // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(cookieParser());
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use('/users', userRouter);
+app.use('/auth', authRouter);
+
 app.use(express.static('public'));
 
 app.set('view engine' , 'pug');
