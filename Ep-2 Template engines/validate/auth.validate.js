@@ -1,3 +1,5 @@
+var md5 = require('md5');
+
 var db = require('../db.js');
 
 module.exports.postLogin = (req, res, next) => {
@@ -17,7 +19,7 @@ module.exports.postLogin = (req, res, next) => {
 			errors: ['Email does not exits']
 		});
 	}
-	if(user.password !== password){
+	if(user.password !== md5(password) ){
 		res.render('auth/login', {
 			errors: ['Password is incorrect. Try again'],
 			value: req.body

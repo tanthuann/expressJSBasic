@@ -2,7 +2,7 @@
   "users": [
     {
       "email": "123@123",
-      "password": "12345",
+      "password": "827ccb0eea8a706c4c34a16891f84e7b",
       "name": "Trương Tấn Thuận",
       "phone": "0931844399",
       "id": "oI5oSN3p8"
@@ -11,22 +11,36 @@
       "name": "Phan Thị Thu Hiền",
       "phone": "0933561651",
       "email": "123@hien",
-      "password": "123",
+      "password": "202cb962ac59075b964b07152d234b70",
       "id": "D3y-ABTRz"
     },
     {
       "name": "Trần Phú",
       "phone": "0656516465",
       "email": "123@phu",
-      "password": "123",
+      "password": "202cb962ac59075b964b07152d234b70",
       "id": "K73-qrMcG"
     },
     {
       "name": "Trần Tiến",
       "phone": "091611651",
       "email": "123@tien",
-      "password": "123",
+      "password": "202cb962ac59075b964b07152d234b70",
       "id": "onKsrK23x"
+    },
+    {
+      "name": "Trương Thuận",
+      "phone": "016933498648",
+      "email": "123@thuan",
+      "password": "827ccb0eea8a706c4c34a16891f84e7b",
+      "id": "rd6_b8OfB"
+    },
+    {
+      "name": "Huỳnh Duy",
+      "phone": "01598766548",
+      "email": "123@duy",
+      "password": "202cb962ac59075b964b07152d234b70",
+      "id": "nXCVbHRQj"
     }
   ]
 }
