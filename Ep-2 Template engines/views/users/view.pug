@@ -1,11 +1,21 @@
 extends ../layouts/layout.pug
 
 block content
-	h1 User View
+	div(class="h1 p-2 text-white text-center bg-primary")
+		h1 User view
 	ul
-		span Name:&nbsp
-		span(class="")= user.name
-		br
-		span Id:&nbsp
-		span(class="text-warning")= user.id
+		.container
+			table.table.table-hover.table-dark
+				tr
+					th.text-center.bg-info.border-0 Name
+					td.text-center.text-center= user.name
+				tr
+					th.text-center.bg-info Email
+					td.text-center= user.email
+				tr
+					th.text-center.bg-info Phone
+					td.text-center= user.phone
+				tr
+					th.text-center.bg-info Id
+					td.text-center= user.id
 		

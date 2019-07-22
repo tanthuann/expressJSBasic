@@ -19,6 +19,6 @@ router.get('/create', controller.create);
 
 router.get('/:id', controller.userID);
 
-router.post('/create', validate.postCreate ,controller.postCreate);
+router.post('/create', validate.postCreate,controller.postCreate);
 
 module.exports = router;

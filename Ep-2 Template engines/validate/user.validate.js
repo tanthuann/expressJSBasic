@@ -5,20 +5,19 @@ module.exports.postCreate = (req, res, next) => {
 	if (!newUser.name){
 		errors.push('Name is not required')
 	}
-	newUser.phone = parseInt(newUser.phone);
 
-not:	if(newUser.phone === '' || !Number.isInteger(newUser.phone)){
-			if (newUser.phone === ''){
-				errors.push('Phone number is not required');
-				newUser.phone='';
-				break not;
-			}
-			
-			if(!Number.isInteger(newUser.phone)){
-				errors.push('Phone number must be an integer')
-				newUser.phone='';
-			}
+	if(newUser.phone === ''){
+		errors.push('Phone number is not required');
+		newUser.phone='';
 		}
+	if (!newUser.email) {
+		errors.push('Email is not required')
+	}
+
+	if (!newUser.password) {
+		errors.push('Input password');
+	}
+
 	if(errors.length) {
 		res.render('users/create', {
 			errors: errors,

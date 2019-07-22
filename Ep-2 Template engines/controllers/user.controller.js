@@ -35,7 +35,7 @@ module.exports.userID = (req, res) => {
 
 module.exports.postCreate = (req,res) => {
 	req.body.id = shortid.generate();
-	
-	db.get('users').push(newUser).write();
+	req.body.name = req.body.name.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+	db.get('users').push(req.body).write();
 	res.redirect('/users');
 };
