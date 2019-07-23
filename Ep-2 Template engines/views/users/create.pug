@@ -8,7 +8,7 @@ block content
 			each error in errors
 				.alert.alert-warning= error
 	div.container
-		form(action="/users/create", method="POST")
+		form(action="/users/create", method="POST", enctype="multipart/form-data")
 			.form-group
 				label(class="h4", for="name") Name
 				input#name.form-control(type="text", name="name", value=value ? value.name : '')
@@ -21,5 +21,8 @@ block content
 			.form-group
 				label(class="h4", for="password") Password
 				input#password.form-control(type="password", name="password", value=value ? value.password : '')
+			.form-group
+				label(class="h4", for="avatar") Avatar
+				input#avatar.form-control-file(type="file", name="avatar")
 
 				button(class="my-2 btn btn-success") Create

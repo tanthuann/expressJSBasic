@@ -11,11 +11,17 @@ block content
 		tbody
 			thead.thead-dark
 				tr 
+					th(scope="col") Avatar
 					th(scope="col") Name
 					th(scope="col") Phone							
-					th(scope="col") View					
+					th(scope="col") View	
 			each user in users
-				tr
+				tr.py-4
+					td
+						if user.avatar
+							img(src=user.avatar, width="50", height="50")
+						else
+							i(class="fas fa-user fa-2x ml-auto mr-2")
 					td(scope="row",class="font-weight-bold")= user.name
 					td(scope="row",class="font-weight-bold")= user.phone
 					td(scope="row") 

@@ -1,7 +1,7 @@
 module.exports.postCreate = (req, res, next) => {
 	newUser = req.body;
 	var errors=[];
-	newUser.name = newUser.name.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+	//newUser.name = newUser.name.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 	if (!newUser.name){
 		errors.push('Name is not required')
 	}

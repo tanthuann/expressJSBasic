@@ -22,7 +22,11 @@ module.exports.search = (req,res) => {
 };
 
 module.exports.create = (req,res) => {
-	res.render('users/create');
+	var user = db.get('users').find( {id: req.signedCookies.userId}).value();
+	//user.avatar = user.avatar.split('/').slice().join('/');
+	res.render('users/create', {
+		user: user
+	});
 };
 
 module.exports.userID = (req, res) => {
@@ -38,6 +42,8 @@ module.exports.postCreate = (req,res) => {
 	req.body.id = shortid.generate();
 	req.body.name = req.body.name.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 	req.body.password = md5(req.body.password)
+	req.body.avatar = req.file.path.split('/').slice(1).join('/');
+
 	db.get('users').push(req.body).write();
 	res.redirect('/users');
 };
