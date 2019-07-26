@@ -13,6 +13,8 @@ html
 			a(class="btn btn-primary btn-lg mx-2",href="/users") User
 			a(class="btn btn-primary btn-lg mx-2",href="/users/create") Create
 			a(class="btn btn-primary btn-lg mx-2",href="/products") Products
+			a(class="btn btn-primary btn-lg mx-2",href="/cart") Cart
+				span(class="badge badge-danger ml-2")= total
 			if userName
 				if userName.avatar
 					img.ml-auto(src=userName.avatar, width="50", height="50")

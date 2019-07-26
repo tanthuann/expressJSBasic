@@ -17,6 +17,7 @@ block content
 							p(class="card-text")= product.description
 							p(class="card-text")
 								small(class="text-muted")= product.price
+							a(href="/cart/add/"+ product.id, class="btn btn-primary") Add to Cart
 		unless notPagination
 			.d-flex.justify-content-center
 				nav(aria-label='...')

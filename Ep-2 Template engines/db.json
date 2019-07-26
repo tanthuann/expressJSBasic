@@ -73,6 +73,15 @@
       "password": "202cb962ac59075b964b07152d234b70",
       "id": "k45mfapzB",
       "avatar": "uploads/b9cce892ee58369414a3f36d3397106e"
+    },
+    {
+      "_csrf": "",
+      "name": "Trương Thị Khải",
+      "phone": "0123412347",
+      "email": "123@khai",
+      "password": "202cb962ac59075b964b07152d234b70",
+      "id": "vDe9pxZvg",
+      "avatar": "uploads/ecf609bf71ac7a43a6acb0a82a3db0a0"
     }
   ],
   "products": [
@@ -775,6 +784,48 @@
       "description": "aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum",
       "img": "https://picsum.photos/200/100",
       "price": 84190
+    }
+  ],
+  "sessions": [
+    {
+      "id": "4wdnx4FD7",
+      "cart": {
+        "021d2cba-7236-4ef3-85cf-4d160e7ff5cb": 4,
+        "2db5f57e-13da-4d46-9c23-5baaf1d10e20": 1
+      }
+    },
+    {
+      "id": "pioZ6E6-n",
+      "cart": {
+        "2db5f57e-13da-4d46-9c23-5baaf1d10e20": 2,
+        "021d2cba-7236-4ef3-85cf-4d160e7ff5cb": 1
+      }
+    },
+    {
+      "id": "MgeLvPEg-",
+      "cart": {
+        "021d2cba-7236-4ef3-85cf-4d160e7ff5cb": 17,
+        "2db5f57e-13da-4d46-9c23-5baaf1d10e20": 7,
+        "b1bc3c15-1b65-43b2-bf9e-67e73f74d40a": 2
+      }
+    },
+    {
+      "id": "NT9FPjdGk",
+      "cart": {
+        "021d2cba-7236-4ef3-85cf-4d160e7ff5cb": 1
+      }
+    },
+    {
+      "id": "TYcScD_Z9",
+      "cart": {
+        "021d2cba-7236-4ef3-85cf-4d160e7ff5cb": 11,
+        "f2d82448-65ca-4c61-b5dc-4cf76bc11e46": 1,
+        "54629a57-bb6e-47fc-8273-a61a0ae433f8": 1,
+        "b1bc3c15-1b65-43b2-bf9e-67e73f74d40a": 2,
+        "2db5f57e-13da-4d46-9c23-5baaf1d10e20": 2,
+        "e11d2000-88b2-4737-a033-f94e77865dfc": 1,
+        "2bce9068-4d0c-4fa7-a098-0985ee624be6": 1
+      }
     }
   ]
 }

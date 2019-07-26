@@ -9,6 +9,8 @@ block content
 				.alert.alert-warning= error
 	div.container
 		form(action="/users/create", method="POST", enctype="multipart/form-data")
+			input(type="hidden", name="_csrf", value=csrfToken)
+				
 			.form-group
 				label(class="h4", for="name") Name
 				input#name.form-control(type="text", name="name", value=value ? value.name : '')

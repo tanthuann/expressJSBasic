@@ -2,7 +2,11 @@ var db = require('../db.js');
 
 var products = db.get('products').value();
 
+
+
 module.exports.viewProduct = (req, res) => {
+	var user = db.get('users').find({id: req.signedCookies.userId}).value();
+
 	var page = req.query.page || 1; //n
 	var perPage = 9; //x
 
@@ -13,11 +17,22 @@ module.exports.viewProduct = (req, res) => {
 		var stop = 1;
 	if(page === 12 || parseInt(page) === 12)
 		var last = 1;
+
+	var totalCart = db.get('sessions').find({id: req.signedCookies.sessionId}).get('cart').value();
+
+	var sum = 0;
+
+	for(var key in totalCart){
+		sum += totalCart[key];
+	}
+
 	res.render('product/product', {
+		user: user,
 		products: productsPage,
 		page: parseInt(page),
 		stop: stop,
-		last: last
+		last: last,
+		total: sum
 	});
 };
 
