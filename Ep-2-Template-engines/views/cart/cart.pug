@@ -1,0 +1,16 @@
+extends ../layouts/layout.pug
+
+block content
+	.container
+		.row
+			each product in products
+				.col-sm-8
+					div(class="card mb-3 h-20")
+						img(class="card-img-top", src= product.info.img,alt="Card image cap")
+						div(class="card-body")
+							h5(class="card-title")= product.info.name
+							p(class="card-text")= product.info.description
+							p(class="card-text")
+								small(class="text-muted")= product.info.price
+				.col-sm-4.d-flex.justify-content-center.align-items-center
+					div(class="mb-3 flex-gows-1 display-2 text-info")= 'x '+product.amount

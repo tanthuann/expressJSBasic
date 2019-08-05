@@ -1,0 +1,30 @@
+extends ../layouts/layout.pug
+
+block content
+	div(class="py-4 d-flex justify-content-center bg-success text-white")
+		h1 Create
+	.container
+		if errors
+			each error in errors
+				.alert.alert-warning= error
+	div.container
+		form(action="/users/create", method="POST", enctype="multipart/form-data")
+			input(type="hidden", name="_csrf", value=csrfToken)
+				
+			.form-group
+				label(class="h4", for="name") Name
+				input#name.form-control(type="text", name="name", value=value ? value.name : '')
+			.form-group
+				label(class="h4", for="phone") Phone number
+				input#phone.form-control(type="number", name="phone", value=value ? value.phone : '')
+			.form-group
+				label(class="h4", for="email") Email
+				input#email.form-control(type="email", name="email", value=value ? value.email : '')
+			.form-group
+				label(class="h4", for="password") Password
+				input#password.form-control(type="password", name="password", value=value ? value.password : '')
+			.form-group
+				label(class="h4", for="avatar") Avatar
+				input#avatar.form-control-file(type="file", name="avatar")
+
+				button(class="my-2 btn btn-success") Create

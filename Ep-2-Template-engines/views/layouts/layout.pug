@@ -1,0 +1,31 @@
+html
+	head
+		link(rel="stylesheet", href="/source/bootstrap4/css/bootstrap.css")
+		//- link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", crossorigin="anonymous")
+		script(src="https://kit.fontawesome.com/7c6793a68c.js")
+		script(src="/source/bootstrap4/js/jquery.js")
+		script(src="/source/bootstrap4/js/popper.js")
+		script(src="/source/bootstrap4/js/bootstrap.js")
+	body
+		div(style="",class="bg-light container-fluid py-3 d-flex align-items-center text-center")
+			img(src="https://static.coders.tokyo/coders-tokyo-school-logo.svg", class="")
+			a(class="btn btn-primary btn-lg mx-2",href="/") Home
+			a(class="btn btn-primary btn-lg mx-2",href="/users") User
+			a(class="btn btn-primary btn-lg mx-2",href="/users/create") Create
+			a(class="btn btn-primary btn-lg mx-2",href="/products") Products
+			a(class="btn btn-primary btn-lg mx-2",href="/cart") Cart
+				span(class="badge badge-danger ml-2")= total
+			if userName
+				if userName.avatar
+					img.ml-auto(src=userName.avatar, width="50", height="50")
+				else
+					i(class="fas fa-user fa-2x ml-auto mr-2")
+			else if user
+				if user.avatar
+					img.ml-auto.mr-2(src=user.avatar, width="50", height="50")
+				else
+					i(class="fas fa-user fa-2x ml-auto mr-2")
+				h1.h1.mb-0= user.name
+			else
+				a(class="btn btn-danger btn-lg ml-auto",href="/auth/login") Login
+		block content

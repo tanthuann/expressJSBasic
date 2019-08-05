@@ -1,0 +1,57 @@
+extends ../layouts/layout.pug
+
+block content
+	div(class="container text-center my-4")
+		form(action="/products/search", method="GET")
+				div(class="d-flex justify-content-center align-items-center")
+				input(class="input input-lg", type="text", name="q", value="")
+				button(class="btn btn-warning") Search
+	.container
+		.row
+			each product in products
+				.col-sm-4
+					div(class="card mb-3")
+						img(class="card-img-top", src= product.img ,alt="Card image cap")
+						div(class="card-body")
+							h5(class="card-title")= product.name
+							p(class="card-text")= product.description
+							p(class="card-text")
+								small(class="text-muted")= product.price
+							a(href="/cart/add/"+ product.id, class="btn btn-primary") Add to Cart
+		unless notPagination
+			.d-flex.justify-content-center
+				nav(aria-label='...')
+					ul.pagination
+						if stop
+							li.page-item.disabled
+								a.page-link(href='/products?page='+1) «
+						else
+							li.page-item
+							a.page-link(href='/products?page='+1) «
+						if stop
+							li.page-item.disabled
+								a.page-link(href='/products?page='+(page-1), tabindex='-1') Previous
+						else
+							li.page-item
+							a.page-link(href='/products?page='+(page-1), tabindex='-1') Previous
+						unless stop
+							li.page-item
+								a.page-link(href='/products?page='+(page-1))= page-1
+						li.page-item.active
+							a.page-link(href='/products?page='+(page))= page
+								span.sr-only (current)
+						unless last
+							li.page-item
+								a.page-link(href='/products?page='+(page+1))= page+1
+						if last
+							li.page-item.disabled
+								a.page-link(href='/products?page='+(page+1)) Next
+						else
+							li.page-item
+								a.page-link(href='/products?page='+(page+1)) Next
+						if last
+							li.page-item.disabled
+								a.page-link(href='/products?page='+12) »
+						else
+							li.page-item
+								a.page-link(href='/products?page='+12) »
